@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-inter: 'Inter', system-ui, sans-serif;
+  --font-display: 'Inter', system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-earth-50 text-earth-900;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-ochre-600 hover:bg-ochre-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl;
+  }
+  
+  .btn-secondary {
+    @apply bg-transparent border-2 border-ochre-600 text-ochre-600 hover:bg-ochre-600 hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200;
+  }
+  
+  .section-padding {
+    @apply py-16 md:py-24 px-4 sm:px-6 lg:px-8;
+  }
+  
+  .container-custom {
+    @apply max-w-7xl mx-auto;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-ochre-600 to-terracotta-600 bg-clip-text text-transparent;
+  }
+  
+  .pattern-overlay {
+    @apply relative;
+  }
+  
+  .pattern-overlay::before {
+    content: '';
+    @apply absolute inset-0 opacity-5;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f18c2e' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+}
+
