@@ -4,6 +4,7 @@ import './globals.css'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import LanguageProvider from '@/components/LanguageProvider'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
@@ -31,8 +32,8 @@ export default function RootLayout({
           <main className="min-h-screen">{children}</main>
           <Footer />
         </LanguageProvider>
+        <SpeedInsights />
       </body>
     </html>
   )
 }
-
